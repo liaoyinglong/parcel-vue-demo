@@ -9,7 +9,13 @@ export default {
     },
   },
   render(h) {
-    return <div>2222</div>
+    const cols = this.$slots.default.map(item => {
+      if (item.tag) {
+        return <el-col span={this.colSpan}>{item}</el-col>
+      }
+      return item
+    })
+    return <el-row gutter={30}>{cols}</el-row>
   },
 }
 </script>

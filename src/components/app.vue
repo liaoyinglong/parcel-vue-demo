@@ -36,12 +36,16 @@
         </el-col>
       </el-row>
       <row>
-        <el-form-item label="密码" prop="pass1" verify required>
-          <el-input v-model="model.pass1"></el-input>
+        <el-form-item label="列1">
+          <el-input v-model="model.lie1"></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="pass2" :verify="verifyPassword" :watch="model.pass1">
-          <el-input v-model="model.pass2"></el-input>
+        <el-form-item label="列2">
+          <el-input v-model="model.lie2"></el-input>
         </el-form-item>
+        <el-form-item label="列3">
+          <el-input v-model="model.lie3"></el-input>
+        </el-form-item>
+
       </row>
     </el-form>
     <div style="height:20px"></div>
@@ -63,6 +67,11 @@ export default {
         pass1: '',
         pass2: '',
         text: '',
+        lie1: '',
+        lie2: '',
+        lie3: '',
+        lie4: '',
+        lie5: '',
         students: [{ name: '', age: '' }],
       },
     }

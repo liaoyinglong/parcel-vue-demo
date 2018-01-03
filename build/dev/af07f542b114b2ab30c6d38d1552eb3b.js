@@ -7519,7 +7519,19 @@ exports.reload = tryWrap(function (id, options) {
       }
     },
     render: function render(h) {
-      return h("div", null, ["2222"]);
+      var _this = this;
+
+      var cols = this.$slots.default.map(function (item) {
+        if (item.tag) {
+          return h("el-col", {
+            attrs: { span: _this.colSpan }
+          }, [item]);
+        }
+        return item;
+      });
+      return h("el-row", {
+        attrs: { gutter: 30 }
+      }, [cols]);
     }
   };
 })();
@@ -7566,6 +7578,11 @@ if (module.hot) {
           pass1: '',
           pass2: '',
           text: '',
+          lie1: '',
+          lie2: '',
+          lie3: '',
+          lie4: '',
+          lie5: '',
           students: [{ name: '', age: '' }]
         }
       };
@@ -7624,11 +7641,13 @@ __vue__options__.render = function render() {
         _vm.submitForm('dynamicValidateForm');
       } } }, [_vm._v("提交")]), _vm._v(" "), _c('el-button', { attrs: { "type": "primary" }, on: { "click": function click($event) {
         _vm.resetForm('dynamicValidateForm');
-      } } }, [_vm._v("重置")])], 1)], 1), _vm._v(" "), _c('row', [_c('el-form-item', { attrs: { "label": "密码", "prop": "pass1", "verify": "", "required": "" } }, [_c('el-input', { model: { value: _vm.model.pass1, callback: function callback($$v) {
-        _vm.$set(_vm.model, "pass1", $$v);
-      }, expression: "model.pass1" } })], 1), _vm._v(" "), _c('el-form-item', { attrs: { "label": "确认密码", "prop": "pass2", "verify": _vm.verifyPassword, "watch": _vm.model.pass1 } }, [_c('el-input', { model: { value: _vm.model.pass2, callback: function callback($$v) {
-        _vm.$set(_vm.model, "pass2", $$v);
-      }, expression: "model.pass2" } })], 1)], 1)], 2), _vm._v(" "), _c('div', { staticStyle: { "height": "20px" } }), _vm._v(" "), _c('el-card')], 1);
+      } } }, [_vm._v("重置")])], 1)], 1), _vm._v(" "), _c('row', [_c('el-form-item', { attrs: { "label": "列1" } }, [_c('el-input', { model: { value: _vm.model.lie1, callback: function callback($$v) {
+        _vm.$set(_vm.model, "lie1", $$v);
+      }, expression: "model.lie1" } })], 1), _vm._v(" "), _c('el-form-item', { attrs: { "label": "列2" } }, [_c('el-input', { model: { value: _vm.model.lie2, callback: function callback($$v) {
+        _vm.$set(_vm.model, "lie2", $$v);
+      }, expression: "model.lie2" } })], 1), _vm._v(" "), _c('el-form-item', { attrs: { "label": "列3" } }, [_c('el-input', { model: { value: _vm.model.lie3, callback: function callback($$v) {
+        _vm.$set(_vm.model, "lie3", $$v);
+      }, expression: "model.lie3" } })], 1)], 1)], 2), _vm._v(" "), _c('div', { staticStyle: { "height": "20px" } }), _vm._v(" "), _c('el-card')], 1);
 };
 __vue__options__.staticRenderFns = [];
 if (module.hot) {
@@ -7640,7 +7659,7 @@ if (module.hot) {
     if (!module.hot.data) {
       hotAPI.createRecord("data-v-059de671", __vue__options__);
     } else {
-      hotAPI.reload("data-v-059de671", __vue__options__);
+      hotAPI.rerender("data-v-059de671", __vue__options__);
     }
   })();
 }
