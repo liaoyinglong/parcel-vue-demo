@@ -1,4 +1,5 @@
 const MUST_CHINESE = 'mustChinese'
+
 const errorMessageTemplate = {
   [MUST_CHINESE]: '请输入中文',
 }

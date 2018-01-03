@@ -14,7 +14,10 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-vue-jsx": "^3.5.0",
     "babel-preset-env": "^1.6.1",
     "cz-conventional-changelog": "^2.1.0",
     "parcel-bundler": "^1.4.1",
